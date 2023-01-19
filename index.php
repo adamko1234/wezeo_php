@@ -46,16 +46,20 @@
     function note($jsonStudent, $jsonTime)
     {
         $notes = "";
-        foreach ($jsonStudent as $index => $student) {
+        foreach ($jsonStudent as $index => $student)
+        {
             if(isset($jsonTime[$index])){
                 $time = $jsonTime[$index];
-                if ($time <= "07:59") {
+                if ($time <= "07:59")
+                {
                     $notes .= "Prichod: " . $time . " => " . $student . "<br> ";
                 }
-                if ("08:00" <= $time & $time <= "20:00") {
+                if ("08:00" <= $time & $time <= "20:00")
+                {
                     $notes .= "Meskanie: " . $time . " => " . $student . "<br> ";
                 }
-                if ($time > "20" && $time <= "24") {
+                if ($time > "20" && $time <= "24")
+                {
                     die($_POST['name'] . " Nemozne ");
                 }
             }
